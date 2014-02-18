@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.2'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
-gem "haml"
+
 gem 'profanity_filter'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 gem 'therubyracer', platforms: :ruby
@@ -13,6 +13,14 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
+gem 'jquery-rails'
+
+gem 'modernizr-rails'
+
+gem 'sass-rails' # if running rails 3.1 or greater
+gem "compass-rails", "~> 1.1.2"
+gem "singularitygs", "~>1.1.2"
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
@@ -20,12 +28,7 @@ end
 
 group :assets do
   gem 'uglifier', '>= 1.3.0'
-  gem 'jquery-rails'
-  gem 'coffee-rails', '~> 4.0.0'
-  gem "sass", "~>3.2.0"
-  gem "compass", "~>0.12.0"
-  #grid system
-  gem "singularitygs", "~>1.1.2"
+  gem 'coffee-rails', '~> 4.0.0' 
 end
 
 group :development, :test do
