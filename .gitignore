@@ -1,4 +1,4 @@
-*.rbc
+git st*.rbc
 *.sassc
 .sass-cache
 capybara-*.html
@@ -24,3 +24,10 @@ config/secrets.yml
 
 # unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
 .rvmrc
+
+# Ignore all logfiles and tempfiles.
+/log/*.log
+/tmp
+
+#ignore ruby mine settings
+.idea/
