@@ -5,6 +5,7 @@ $white: #fff
 $primary-color: #067dbd
 
 // Text Colors
+$default-header-color: $primary-color
 $default-text-color: #777
 $default-text-emphasis-color: darken($default-text-color, 10%)
 $inverse-text-color: $white
@@ -29,19 +30,12 @@ $inverse-link-visited: darken($inverse-link, 5%)
 
 // Panels boxes and content
 $panel-background-color: #68b5de
-$panel-border-color: darken(adjust-hue($warningBackground, -10), 3%)
-
+$panel-border-color: darken(adjust-hue($panel-background-color, -10), 3%)
 $warning-background-color: #ffba00
-$warning-border-color: darken(adjust-hue($warningBackground, -10), 3%)
-
-
+$warning-border-color: darken(adjust-hue($warning-background-color, -10), 3%)
 $error-background-color: #ff3900
-$error-border-color: darken(adjust-hue($errorBackground, -10), 3%)
-
-
+$error-border-color: darken(adjust-hue($error-background-color, -10), 3%)
 $success-background-color: #02517b
-$success-border-color: darken(adjust-hue($successBackground, -10), 5%)
-
-
+$success-border-color: darken(adjust-hue($success-background-color, -10), 5%)
 $info-background-color: #d9edf7
-$info-border-color: darken(adjust-hue($infoBackground, -10), 7%)
+$info-border-color: darken(adjust-hue($info-background-color, -10), 7%)
