@@ -111,6 +111,9 @@ GEM
       json (~> 1.8)
       rdoc (~> 4.0, < 5.0)
     sexp_processor (4.4.1)
+    simple_form (3.0.1)
+      actionpack (>= 4.0.0, < 4.1)
+      activemodel (>= 4.0.0, < 4.1)
     singularitygs (1.1.2)
       breakpoint (>= 2.0.1)
       compass (>= 0.12.2)
@@ -159,6 +162,7 @@ DEPENDENCIES
   rails (= 4.0.2)
   sass-rails
   sdoc
+  simple_form
   singularitygs (~> 1.1.2)
   sqlite3
   therubyracer
