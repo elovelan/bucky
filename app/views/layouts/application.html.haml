@@ -6,5 +6,13 @@
     = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag :modernizr
   %body
+    %header
+      .container
+        .logo
+        %nav.nav--main
+          %ul
+            %li=link_to "home", "#"
+            %li=link_to "find a kicker", "#"
+
     = yield
     = javascript_include_tag "application", "data-turbolinks-track" => true

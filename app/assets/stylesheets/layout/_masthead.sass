@@ -1,0 +1,25 @@
+.masthead
+  width: 100%
+  background: $black image-url("textures/dark-striped.jpg")
+  height: 486px
+  +box-shadow(inset 0 0 rhythm(96) $black)
+  position: relative
+  &::before
+    content: " "
+    height: 1px
+    width: 100%
+    background-color: rgba($white, .05)
+    position: absolute
+    top: 0
+    left: 0 
+  .headshot
+    +grid-span(9, 2)
+    +margin-leader(16)
+  .action-items
+    +grid-span(11, 13)
+    +margin-leader(36)
+    h2
+      color: $white
+      +adjust-font-size-to(60px)
+
+  
