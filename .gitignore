@@ -32,3 +32,5 @@ config/secrets.yml
 
 #ignore ruby mine settings
 .idea/
+
+.DS_Store
