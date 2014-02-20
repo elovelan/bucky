@@ -16,4 +16,13 @@
             %li=link_to "find a kicker", "#"
 
     = yield
+    %footer
+      .container
+        .copyright
+          &copy;#{Time.now.year}. ikick.it. All rights reserved.
+        %nav
+          %ul 
+            %li=link_to "Terms", "#"
+            %li=link_to "Pricing Options", "#"
+            %li=link_to "How ikick.it works", "#"
     = javascript_include_tag "application", "data-turbolinks-track" => true
