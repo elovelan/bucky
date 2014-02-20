@@ -1,0 +1,20 @@
+header
+  background-color: $black
+  .container
+    +padding-leader(2)
+    +padding-trailer(2)
+  .logo
+    // TODO: Refactor with SVG and SVG Fallback
+    +breakpoint($sm-min-screen, $lg-max-screen)
+      +grid-span(4, 1)
+      background: sprite($logos, logo-white-small) no-repeat
+      height: image-height(sprite-file($logos, logo-white-small))
+      width: image-width(sprite-file($logos, logo-white-small))
+  nav
+    +grid-span(5, 20)
+    +padding-leader(2.5)
+    ul
+      +horizontal-list($default-padding / 2, right)
+      
+
+    
