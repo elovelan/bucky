@@ -12,7 +12,10 @@
     background-color: rgba($white, .05)
     position: absolute
     top: 0
-    left: 0 
+    left: 0
+  .headshot, .action-items
+    // Fixes Chrome opacity bug
+    +backface-visibility(hidden)
   .headshot
     +grid-span(9, 2)
     +margin-leader(16)
