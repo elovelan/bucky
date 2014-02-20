@@ -1,0 +1,70 @@
+=highlight($bg-color, $text-color: $white)
+  // used to changed container background color
+  background-color: $bg-color
+  #{headings()}, p
+    color: $text-color
+    
+=links($link-color: $standard-link)
+  a
+    color: $link-color
+    &:hover, &:active
+      text-decoration: none
+    &:hover
+      color: lighten($link-color, 20%)
+    &:active
+      color: darken($link-color, 10%)
+    &:visited
+      color: ligthen($link-color, 2%)
+      
+=nav-pipes($position)
+  @if $position == "before"
+    li
+      &::before
+        content: " | "
+      &:first-child::before
+        content: ""
+  @if $position == "after"
+    // not ie8 friendly
+    li
+      &::after
+        content: " | "
+      &:last-child::after
+        content: ""
+        
+=psuedo-border($location: "top", $color: rgba($white, .05), $height: 1px, $width: 100%)
+  // For borders that need to sit within the container
+  @if $location == "top"
+    &::before
+      content: " "
+      height: $height
+      width: $width
+      background-color: $color
+      position: absolute
+      top: 0
+      left: 0
+  @if $location == "bottom"
+    &::after
+      content: " "
+      height: $height
+      width: $width
+      background-color: $color
+      position: absolute
+      top: 0
+      left: 0
+      
+=sprite-background($map, $image)
+  background: sprite($map, $image) no-repeat
+  height: image-height(sprite-file($map, $image))
+  width: image-width(sprite-file($map, $image))
+  
+=visuallyhidden
+  position: absolute 
+  overflow: hidden 
+  clip: rect(0 0 0 0) 
+  height: 1px 
+  width: 1px 
+  margin: -1px 
+  padding: 0 
+  border: 0 
+  
+

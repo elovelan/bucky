@@ -21,6 +21,7 @@ gem 'sass-rails' # if running rails 3.1 or greater
 gem "compass-rails", "~> 1.1.2"
 gem "singularitygs", "~>1.1.2"
 gem 'simple_form'
+gem 'devise'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -29,7 +30,7 @@ end
 
 group :assets do
   gem 'uglifier', '>= 1.3.0'
-  gem 'coffee-rails', '~> 4.0.0' 
+  gem 'coffee-rails', '~> 4.0.0'
 end
 
 group :development, :test do

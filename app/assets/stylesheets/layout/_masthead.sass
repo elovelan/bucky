@@ -5,25 +5,40 @@
   height: 486px
   +box-shadow(inset 0 0 rhythm(96) $black)
   position: relative
-  &::before
-    content: " "
-    height: 1px
-    width: 100%
-    background-color: rgba($white, .05)
-    position: absolute
-    top: 0
-    left: 0
+  +psuedo-border
   .headshot, .action-items
     // Fixes Chrome opacity bug
     +backface-visibility(hidden)
+  
   .headshot
     +grid-span(9, 2)
     +margin-leader(16)
+  
   .action-items
-    +grid-span(11, 13)
+    +grid-span(13, 12)
     +margin-leader(36)
     h2
       color: $white
       +adjust-font-size-to(60px)
+    p
+      color: $white
+    small
+      color: rgba($white, .5)
+      em
+        color: $white
+    form
+      +margin-leader(4)
+      .form-inputs
+        +grid-span(8,1,12)
+        [type="text"]
+          +grid-span(4, 1, 8)
+        [type="password"]
+          +grid-span(4, 5, 8)
+      .form-actions
+        +grid-span(3, 9, 12)
+        [type="submit"]
+          +grid-span(3, 1, 3)     
+      label
+        +visuallyhidden 
 
   

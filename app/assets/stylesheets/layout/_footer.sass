@@ -1,8 +1,8 @@
-footer
+[class$="footer"]
   background-color: $black
   height: rhythm(16)
   .copyright, li
-    font-family: $font-default
+    +font("light")
     +adjust-font-size-to(12px)
     +adjust-leading-to(20)
     color: $default-text-color
@@ -10,15 +10,7 @@ footer
     +grid-span(12, 1)
   nav
     +grid-span(12, 13)
-    text-align: right
     ul
-      +inline-list
-      a
-        color: $default-text-color
-        &:hover
-          color: $white
-      li
-        &::before
-          content: " | "
-        &:first-child::before
-          content: ""
+      +links(darken($inverse-link, 50%))
+      +float(right)
+      

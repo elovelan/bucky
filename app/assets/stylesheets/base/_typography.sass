@@ -1,0 +1,21 @@
+#{headings()}, th
+  +font("condensed-black")
+  text-transform: lowercase
+  em
+    color: $primary-color
+
+$headers: (("1", 36px), ("2", 24px), ("3", 21px), ("4", 18px), ("5", 14px), ("6", 12px))
+@each $header in $headers
+  h#{nth($header, 1)}
+    +adjust-font-size-to(nth($header, 2))
+    small
+      +adjust-font-size-to(nth($header, 2) * .8, 1, nth($header, 2))
+      +font("light")
+
+p.leader
+  +adjust-font-size-to(30px)
+  +font("thin")
+p, li, td, small
+  +font("light")
+p, ul
+  +margin-trailer(4)
