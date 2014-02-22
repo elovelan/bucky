@@ -28,7 +28,7 @@
           &copy;#{Time.now.year}. ikick.it. All rights reserved.
         %nav.nav--footer
           %ul 
-            %li=link_to "Terms", "#"
-            %li=link_to "Pricing Options", "#"
-            %li=link_to "How ikick.it works", "#"
+            %li=link_to 'About Us', static_path(:about)   
+            %li=link_to 'Terms', static_path(:terms)
+            %li=link_to 'Pricing Options', static_path(:pricing)
     = javascript_include_tag "application", "data-turbolinks-track" => true

@@ -4,7 +4,7 @@
   em
     color: $primary-color
 
-$headers: (("1", 36px), ("2", 24px), ("3", 21px), ("4", 18px), ("5", 14px), ("6", 12px))
+$headers: (("1", 36px), ("2", 32px), ("3", 28px), ("4", 24px), ("5", 20px), ("6", 16px))
 @each $header in $headers
   h#{nth($header, 1)}
     +adjust-font-size-to(nth($header, 2))
@@ -17,5 +17,19 @@ p.leader
   +font("thin")
 p, li, td, small
   +font("light")
-p, ul
+  strong
+    +font("condensed-black")
+p, ul, ol, blockquote
   +margin-trailer(4)
+ul, ol
+  margin-left: rhythm(8)
+ul
+  list-style: disc
+ol
+  list-style: decimal
+blockquote
+  padding-left: rhythm(8)
+  +font("ultra light")
+  +adjust-leading-to(6)
+  border-left: rgba($black, .1) rhythm(6) solid
+  

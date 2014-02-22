@@ -1,0 +1,25 @@
+[class$="__home"]
+  +highlight($primary-color)
+  height: rhythm(24)
+  h1
+    +adjust-font-size-to(24px)
+    +adjust-leading-to(16)
+    text-align: right
+    text-transform: none
+    +links($white)
+    a
+      +font("thin")
+      margin-left: rhythm(2)
+
+[class$="__static"]
+  background-color: $white
+  padding: $default-padding * 3 0
+  #{headings()}
+    +margin-trailer(2)
+  p, li
+    +adjust-leading-to(6)
+  table
+    img
+      +border-radius(100%)
+      height: rhythm(12)
+      width: rhythm(12)

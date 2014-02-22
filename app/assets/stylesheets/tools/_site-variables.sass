@@ -1,12 +1,6 @@
 //----------------------------------------------------------------------
 // Grid Variables
 //----------------------------------------------------------------------
-$grids: 24
-$gutters: .5
-// $output: float
-
-// TODO: adjust grid for separate platforms
-
 // Breakpoints for responsive
 $sm-min-screen: 320px
 $sm-max-screen: 480px
@@ -14,6 +8,20 @@ $md-min-screen: 368px
 $md-max-screen: 568px
 $lg-min-screen: 768px
 $lg-max-screen: 1024px
+
+
+
+$mobile-first: fasle
+$grids: 24
+$grids: add-grid(4 at $sm-min-screen)
+$grids: add-grid(12 at $md-min-screen)
+$grids: add-grid(24 at $lg-min-screen)
+$gutters: .5
+// $output: float
+
+// TODO: adjust grid for separate platforms
+
+
 
 //----------------------------------------------------------------------
 // Vertical Rhythm & Padding
@@ -56,8 +64,8 @@ $standard-link: $primary-color
 $inverse-link: $white
 
 // Panels boxes and content
-$panel-background-color: #68b5de
-$panel-border-color: darken(adjust-hue($panel-background-color, -10), 3%)
+$panel-background-color: lighten($primary-color, 50%)
+$panel-border-color: darken(adjust-hue($panel-background-color, -10), 20%)
 $warning-background-color: #ffba00
 $warning-border-color: darken(adjust-hue($warning-background-color, -10), 3%)
 $error-background-color: #ff3900

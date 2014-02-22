@@ -12,3 +12,74 @@ body, html
   height: 100%
   margin: 0
   padding: 0
+
+
+table
+  border-collapse: collapse
+  width: 100%
+  text-align: left
+  border: rgba($primary-color, .03) 1px solid
+  td, th
+    border-bottom:  rgba($primary-color, .03) 1px solid
+  thead
+    tr
+      background-color: rgba($primary-color, .3)
+    th
+      padding: $default-padding $default-padding / 2
+  tbody
+    td
+      padding: $default-padding / 2
+    tr:nth-child(2n)
+      td
+        background-color: rgba($primary-color, .01)
+
+form
+  input
+    +adjust-font-size-to(20px)
+    height: $default-input-height
+    line-height: $default-input-height
+    &[type="text"],
+    &[type="password"],
+    &[type^="date"],
+    &[type="email"],
+    &[type="search"],
+    &[type="text"],
+    &[type="time"]
+      border: none
+      +border-radius(0)
+      background-color: $default-form-input-color
+      +font("thin")
+      padding: 0 rhythm(2)
+      &:focus
+        background-color: lighten($default-form-input-color, 50%)
+        +box-shadow(0 0 20px complement($primary-color))
+      
+    &[type="submit"]
+      border: none
+      +border-radius(0)
+      background-color: $primary-color
+      color: $default-submit-text-color
+      +font("condensed-black")
+      +text-shadow(0 1px $black)
+      &:hover, &:active
+        background-color: $default-form-submit-hover-color
+        +box-shadow(none)
+      &:active
+        +text-shadow( 0 -1px $black)
+        color: darken($default-submit-text-color, 5%)
+  
+  textarea
+    background: none
+    +border-radius(0)
+    background-color: $default-form-input-color
+    
+  // Placeholder stylings
+  ::-webkit-input-placeholder
+    text-align: center
+  :-moz-placeholder
+    text-align: center 
+  ::-moz-placeholder
+    text-align: center 
+  :-ms-input-placeholder  
+    text-align: center
+    

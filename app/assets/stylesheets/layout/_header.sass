@@ -17,6 +17,10 @@
         +grid-span(4, 1, 8)
       [type="password"]
         +grid-span(4, 5, 8)
+      input
+        color: $default-form-input-color
+        &:focus
+          color: darken($default-form-input-color, 30%)
     .form-actions
       +grid-span(3, 9, 11)
       [type="submit"]
