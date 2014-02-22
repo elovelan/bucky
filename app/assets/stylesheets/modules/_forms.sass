@@ -1,0 +1,44 @@
+form
+  input
+    +adjust-font-size-to(20px)
+    height: $default-input-height
+    line-height: $default-input-height
+    &[type="text"],
+    &[type="password"],
+    &[type^="date"],
+    &[type="email"],
+    &[type="search"],
+    &[type="text"],
+    &[type="time"]
+      border: none
+      +border-radius(0)
+      background-color: $default-form-input-color
+      +font("thin")
+      &:focus
+        background-color: lighten($default-form-input-color, 50%)
+        +box-shadow(0 0 20px complement($primary-color))
+      
+    &[type="submit"]
+      border: none
+      +border-radius(0)
+      background-color: $primary-color
+      color: $default-submit-text-color
+      +font("condensed-black")
+      &:hover, &:active
+        background-color: $default-form-submit-hover-color
+  
+  textarea
+    background: none
+    +border-radius(0)
+    background-color: $default-form-input-color
+    
+  // Placeholder stylings
+  ::-webkit-input-placeholder
+    text-align: center
+  :-moz-placeholder
+    text-align: center 
+  ::-moz-placeholder
+    text-align: center 
+  :-ms-input-placeholder  
+    text-align: center
+  

@@ -6,14 +6,29 @@
     = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag :modernizr
   %body
-    %header
+    .layout--header
       .container
         .logo
           -# TODO: Replace png with SVG and PNG fallback (for olie)
-        %nav.nav--main
-          %ul
-            %li=link_to "home", "#"
-            %li=link_to "find a kicker", "#"
-
+        .login
+          %form
+            .form-inputs
+              %label{:for => "username"}
+                Username
+              %input{:name => "username", :placeholder => "username", :type => "text"}
+              %label{:for => "password"}
+                Password
+              %input{:name => "username", :placeholder => "password", :type => "password"}
+            .form-actions
+              %input{:type => "submit", :value => "login"}
     = yield
+    .layout--footer
+      .container
+        .copyright
+          &copy;#{Time.now.year}. ikick.it. All rights reserved.
+        %nav.nav--footer
+          %ul 
+            %li=link_to "Terms", "#"
+            %li=link_to "Pricing Options", "#"
+            %li=link_to "How ikick.it works", "#"
     = javascript_include_tag "application", "data-turbolinks-track" => true
