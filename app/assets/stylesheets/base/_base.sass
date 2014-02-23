@@ -34,6 +34,19 @@ table
         background-color: rgba($primary-color, .01)
 
 form
+  label
+    +font("light")
+  .input
+    +margin-trailer(4)
+    label
+      +margin-trailer(2)
+      display: block
+    .boolean
+      +inline-block
+      margin: 0
+      padding: 0
+      &[type="checkbox"]
+        margin-right: $default-padding / 3
   input
     +adjust-font-size-to(20px)
     height: $default-input-height
@@ -52,7 +65,6 @@ form
       padding: 0 rhythm(2)
       &:focus
         background-color: lighten($default-form-input-color, 50%)
-        +box-shadow(0 0 20px complement($primary-color))
       
     &[type="submit"]
       border: none

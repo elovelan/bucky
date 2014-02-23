@@ -27,6 +27,8 @@
       em
         color: $white
     form
+      input:focus
+        +box-shadow(0 0 20px complement($primary-color))
       +margin-leader(4)
       .form-inputs
         +grid-span(8,1,12)

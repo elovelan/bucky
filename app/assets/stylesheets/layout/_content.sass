@@ -11,7 +11,7 @@
       +font("thin")
       margin-left: rhythm(2)
 
-[class$="__static"]
+[class$="__static"], [class$="__auth"]
   background-color: $white
   padding: $default-padding * 3 0
   #{headings()}
@@ -23,3 +23,13 @@
       +border-radius(100%)
       height: rhythm(12)
       width: rhythm(12)
+  form
+    input[type="text"],
+    input[type="password"],
+    input[type="email"]
+      width: 100%
+  .auth--links
+    +margin-leader(8)
+  .panel
+    +grid-span(12, 6)
+    +links
