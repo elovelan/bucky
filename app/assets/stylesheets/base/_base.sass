@@ -71,13 +71,11 @@ form
       +border-radius(0)
       background-color: $primary-color
       color: $default-submit-text-color
-      +font("condensed-black")
-      +text-shadow(0 1px $black)
+      +font
       &:hover, &:active
         background-color: $default-form-submit-hover-color
         +box-shadow(none)
       &:active
-        +text-shadow( 0 -1px $black)
         color: darken($default-submit-text-color, 5%)
   
   textarea
