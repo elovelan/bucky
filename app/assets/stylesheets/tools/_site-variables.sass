@@ -54,10 +54,8 @@ $default-text-emphasis-color: darken($default-text-color, 10%)
 $inverse-text-color: $white
 $inverse-text-emphasis-color: darken($white, 10%)
 $panel-text-color: $default-text-emphasis-color
-$warning-text-color: #c09853
-$error-text-color: #b94a48
-$success-text-color: #468847
-$info-text-color: #3a87ad
+
+
 
 // Link colors
 $standard-link: $primary-color
@@ -66,14 +64,18 @@ $inverse-link: $white
 // Panels boxes and content
 $panel-background-color: lighten($primary-color, 50%)
 $panel-border-color: darken(adjust-hue($panel-background-color, -10), 20%)
-$warning-background-color: #ffba00
-$warning-border-color: darken(adjust-hue($warning-background-color, -10), 3%)
-$error-background-color: #ff3900
-$error-border-color: darken(adjust-hue($error-background-color, -10), 3%)
-$success-background-color: #02517b
-$success-border-color: darken(adjust-hue($success-background-color, -10), 5%)
-$info-background-color: #d9edf7
-$info-border-color: darken(adjust-hue($info-background-color, -10), 7%)
+$warning-bgc: #ffba00
+$warning-bc: darken(adjust-hue($warning-bgc, -10), 3%)
+$warning-text: darken($warning-bgc, 30%)
+$error-bgc: #ff3900
+$error-bc: darken(adjust-hue($error-bgc, -10), 3%)
+$error-text: darken($error-bgc, 30%)
+$success-bgc: #02517b
+$success-bc: darken(adjust-hue($success-bgc, -10), 5%)
+$success-text: darken($success-bgc, 30%)
+$info-bgc: #d9edf7
+$info-bc: darken(adjust-hue($info-bgc, -10), 7%)
+$info-text: darken($info-bgc, 30%)
 
 //----------------------------------------------------------------------
 // Form Elements

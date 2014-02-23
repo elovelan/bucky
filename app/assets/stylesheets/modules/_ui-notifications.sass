@@ -1,0 +1,15 @@
+$notifications: (("alert", $warning-bgc, $warning-bc, $warning-text), ("warning", $warning-bgc, $warning-bc, $warning-text), ("error", $error-bgc, $error-bc, $error-text), ("info", $info-bgc, $info-bc, $info-text), ("success", $info-bgc, $info-bc, $info-text))
+
+.notification
+  padding: rhythm(4)
+  +font("thin")
+  text-align: center
+  @each $notification in $notifications
+    &.#{nth($notification, 1)}
+      background-color: nth($notification, 2)
+      border: nth($notification, 3) 1px solid
+      color: nth($notification, 4)
+      
+.error_notification, .error
+  color: $error-text
+  +font("thin")

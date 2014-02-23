@@ -21,6 +21,10 @@
               %input{:name => "username", :placeholder => "password", :type => "password"}
             .form-actions
               %input{:type => "submit", :value => "login"}
+    - flash.each do |type, message|
+      %div{class: "notification #{flash_class type}", "data-alert" => ""}
+        .container
+          = message
     = yield
     .layout--footer
       .container
