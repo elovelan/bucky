@@ -30,6 +30,10 @@
         content: " | "
       &:last-child::after
         content: ""
+  @if $position == "none"
+    li
+      &::after
+        content: ""
         
 =psuedo-border($location: "top", $color: rgba($white, .05), $height: 1px, $width: 100%)
   // For borders that need to sit within the container

@@ -49,8 +49,6 @@ form
         margin-right: $default-padding / 3
   input
     +adjust-font-size-to(20px)
-    height: $default-input-height
-    line-height: $default-input-height
     &[type="text"],
     &[type="password"],
     &[type^="date"],
@@ -59,6 +57,8 @@ form
     &[type="text"],
     &[type="time"]
       border: none
+      height: $default-input-height
+      line-height: $default-input-height
       +border-radius(0)
       background-color: $default-form-input-color
       +font("thin")
@@ -67,16 +67,7 @@ form
         background-color: lighten($default-form-input-color, 50%)
       
     &[type="submit"]
-      border: none
-      +border-radius(0)
-      background-color: $primary-color
-      color: $default-submit-text-color
-      +font
-      &:hover, &:active
-        background-color: $default-form-submit-hover-color
-        +box-shadow(none)
-      &:active
-        color: darken($default-submit-text-color, 5%)
+      +btn
   
   textarea
     background: none
