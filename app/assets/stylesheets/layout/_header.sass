@@ -3,11 +3,10 @@
   .container
     height: rhythm(16)
   .logo
-    // TODO: Refactor with SVG and SVG Fallback
-    //+breakpoint($sm-min-screen, $lg-max-screen)
     +grid-span(4, 1)
-    +sprite-background($logos, logo-white-small)
     +margin-leader(2.5)
+    a:hover
+      +opacity(.5)
   .login
     +margin-leader(3)
     +grid-span(11, 14)
