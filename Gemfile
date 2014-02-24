@@ -22,6 +22,7 @@ gem "compass-rails", "~> 1.1.2"
 gem "singularitygs", "~>1.1.2"
 gem 'simple_form'
 gem 'devise'
+gem 'font-awesome-sass'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
