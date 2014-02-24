@@ -28,6 +28,7 @@ GEM
     arel (4.0.2)
     atomic (1.1.14)
     bcrypt-ruby (3.1.2)
+    bcrypt-ruby (3.1.2-x86-mingw32)
     breakpoint (2.0.7)
       compass (>= 0.12.1)
       sass (>= 3.2.0)
@@ -54,6 +55,8 @@ GEM
       warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.0.2)
+    font-awesome-sass (4.0.2)
+      sass-rails (>= 3.1.1)
     fssm (0.2.10)
     haml (4.1.0.alpha.2)
       tilt
@@ -164,6 +167,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   compass-rails (~> 1.1.2)
   devise
+  font-awesome-sass
   haml-rails
   html2haml
   jbuilder (~> 1.2)
