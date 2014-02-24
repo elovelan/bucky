@@ -1,1 +1,19 @@
-.btn
+=btn($background: $primary-color)
+  border: none
+  +border-radius(0)
+  background-color: $background
+  color: $default-submit-text-color
+  height: $default-input-height
+  line-height: $default-input-height
+  text-align: center
+  display: block
+  text-decoration: none
+  +font
+  &:hover, &:active
+    background-color: $default-form-submit-hover-color
+    +box-shadow(none)
+    cursor: pointer
+  &:active
+    color: darken($default-submit-text-color, 5%)
+
+  

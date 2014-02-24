@@ -9,18 +9,18 @@
     .layout--header
       .container
         .logo
-          -# TODO: Replace png with SVG and PNG fallback (for olie)
-        .login
-          %form
-            .form-inputs
-              %label{:for => "username"}
-                Username
-              %input{:name => "username", :placeholder => "username", :type => "text"}
-              %label{:for => "password"}
-                Password
-              %input{:name => "username", :placeholder => "password", :type => "password"}
-            .form-actions
-              %input{:type => "submit", :value => "login"}
+          =link_to image_tag('logos/logo-white-small.png'), root_path
+        - if user_signed_in?
+          .login
+            %a=link_to "Add Kick", "#", class: "btn--auth"
+            %a=link_to "Add Highlight", "#", class: "btn--auth"
+            %a=link_to "My Profile", "#", class: "btn--auth"
+        - else
+          .login=link_to 'Login', login_path, class: "btn--auth"
+    - flash.each do |type, message|
+      %div{class: "notification #{flash_class type}", "data-alert" => ""}
+        .container
+          = message
     = yield
     .layout--footer
       .container
@@ -28,7 +28,12 @@
           &copy;#{Time.now.year}. ikick.it. All rights reserved.
         %nav.nav--footer
           %ul 
-            %li=link_to "Terms", "#"
-            %li=link_to "Pricing Options", "#"
-            %li=link_to "How ikick.it works", "#"
+            %li=link_to 'About Us', static_path(:about)   
+            %li=link_to 'Terms', static_path(:terms)
+            %li=link_to 'Pricing Options', static_path(:pricing)
+            - if user_signed_in?
+              %li=link_to 'Logout', logout_path
+            -else
+              %li=link_to 'Login', login_path
+              %li=link_to 'Register', register_path
     = javascript_include_tag "application", "data-turbolinks-track" => true
