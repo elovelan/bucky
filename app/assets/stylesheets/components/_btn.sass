@@ -1,6 +1,9 @@
 =btn($background: $primary-color)
-  border: none
+  border-style: solid
+  border-width: 0 
+  cursor: pointer
   +border-radius(0)
+  +inline-block
   background-color: $background
   color: $default-submit-text-color
   height: $default-input-height
@@ -8,11 +11,13 @@
   text-align: center
   display: block
   text-decoration: none
+  -webkit-appearance: none
+  -webkit-border-radius: 0
   +font
   &:hover, &:active
     background-color: $default-form-submit-hover-color
     +box-shadow(none)
-    cursor: pointer
+    
   &:active
     color: darken($default-submit-text-color, 5%)
 

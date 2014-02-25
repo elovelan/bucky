@@ -2,26 +2,21 @@
 // Grid Variables
 //----------------------------------------------------------------------
 // Breakpoints for responsive
-$sm-min-screen: 320px
+$sm-min-screen: 1px
 $sm-max-screen: 480px
 $md-min-screen: 368px
 $md-max-screen: 568px
 $lg-min-screen: 768px
 $lg-max-screen: 1024px
 
-
-
-$mobile-first: fasle
-$grids: 24
-$grids: add-grid(4 at $sm-min-screen)
-$grids: add-grid(12 at $md-min-screen)
+$mobile-first: true
+$grids: 4
+$grids: add-grid(12 at $md-max-screen)
 $grids: add-grid(24 at $lg-min-screen)
 $gutters: .5
 // $output: float
 
 // TODO: adjust grid for separate platforms
-
-
 
 //----------------------------------------------------------------------
 // Vertical Rhythm & Padding
@@ -54,8 +49,6 @@ $default-text-emphasis-color: darken($default-text-color, 10%)
 $inverse-text-color: $white
 $inverse-text-emphasis-color: darken($white, 10%)
 $panel-text-color: $default-text-emphasis-color
-
-
 
 // Link colors
 $standard-link: $primary-color

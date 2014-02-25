@@ -1,38 +1,56 @@
 [class$="header"]
   background-color: $black
   +clearfix
+  +breakpoint($sm-min-screen)
+    padding: rhythm(4)
+  +breakpoint($lg-min-screen)
+    padding: 0
+  
   .container
     height: rhythm(16)
+  
   .logo
-    +grid-span(4, 1)
-    +margin-leader(2.5)
     a:hover
       +opacity(.5)
+    .logo--svg
+      @extend %svg-fill
+    +breakpoint($sm-min-screen)
+      +grid-span(2, 2)
+      text-align: center
+    +breakpoint($lg-min-screen)
+      +grid-span(3,1)
+      text-align: left
+
   [class^="login"]
     +margin-leader(4)
-    +grid-span(11, 14)
     +links($white)
-    [class^="btn"]
-      +btn(rgba($white, .3))
-      display: block
-      width: rhythm(32)
-      +float(right)
-      margin-left: rhythm(4)
-    ul
-      display: block
-      color: $white
-      text-align: right
-      margin-top: rhythm(3)
-      +horizontal-list(right, 0)
-      li
-        margin-left: rhythm(8)
-        +adjust-font-size-to(14px)
-        
-    // label
-    //   +visuallyhidden 
     height: auto
-    input
-      // background-color: rgba($white, .2) 
+    ul
+      display: none
       
+    
+    +breakpoint($sm-min-screen)
+      +grid-span(4,1)
+      text-align: left
 
+    +breakpoint($lg-min-screen)
+      +grid-span(11, 14)
+      [class^="btn"]
+        +btn(rgba($white, .3))
+        display: block
+        width: rhythm(32)
+        +float(right)
+        margin-left: rhythm(4)
+      ul
+        display: block
+        color: $white
+        text-align: right
+        margin-top: rhythm(3)
+        +horizontal-list(right, 0)
+        li
+          margin-left: rhythm(8)
+          +adjust-font-size-to(14px)
+    
+    
+    
     

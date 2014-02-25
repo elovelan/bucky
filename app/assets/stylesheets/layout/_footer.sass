@@ -1,16 +1,25 @@
 [class$="footer"]
   background-color: $black
   height: rhythm(16)
+  +links(darken($inverse-link, 50%))
   .copyright, li
     +font("light")
     +adjust-font-size-to(12px)
     +adjust-leading-to(20)
     color: $default-text-color
   .copyright
-    +grid-span(12, 1)
+    +breakpoint($sm-min-screen)
+      +grid-span(4, 1)
+      text-align: center
+    +breakpoint($lg-min-screen)
+      +grid-span(12, 1)
+      text-align: left
   nav
-    +grid-span(12, 13)
-    ul
-      +links(darken($inverse-link, 50%))
-      +float(right)
+    +breakpoint($sm-min-screen)
+      +grid-span(4, 1)
+      text-align: center
+    +breakpoint($lg-min-screen)
+      +grid-span(12, 13)
+      ul
+        +float(right)
       

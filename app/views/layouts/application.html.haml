@@ -2,6 +2,7 @@
 %html
   %head
     %title Kicking Bucky Balls
+    %meta(name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=0")
     = csrf_meta_tags
     = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag :modernizr
@@ -9,7 +10,11 @@
     .layout--header
       .container
         .logo
-          =link_to image_tag('logos/logo-white-small.png'), root_path
+          .svg
+            %a(href="/")
+              = inline_svg("logo")
+          .no-svg
+            =link_to image_tag('logos/logo-white-small.png'), root_path
         - if user_signed_in?
           .login
             %a=link_to "Add Kick", "#", class: "btn--auth"
@@ -25,7 +30,7 @@
     .layout--footer
       .container
         .copyright
-          &copy;#{Time.now.year}. ikick.it. All rights reserved.
+          &copy;#{Time.now.year}. #{app_name}. All rights reserved.
         %nav.nav--footer
           %ul 
             %li=link_to 'About Us', static_path(:about)   
