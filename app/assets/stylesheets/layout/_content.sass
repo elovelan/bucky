@@ -30,7 +30,7 @@
     +adjust-leading-to(6)
   table
     img
-      @extend %img-circle
+      +border-radius(100%)
       height: rhythm(12)
       width: rhythm(12)
   form
@@ -42,6 +42,9 @@
     padding: rhythm(4)
     input[type="submit"]
       width: 100%
+  +breakpoint($lg-min-screen)
+    input[type="submit"]
+      width: auto
   
       
     
