@@ -21,7 +21,7 @@
       +adjust-leading-to(16)
     
 
-[class$="__static"], [class$="__auth"]
+[class$="__static"], [class$="__auth"], [class$="__search"]
   background-color: $white
   padding: $default-padding * 3 0
   #{headings()}
@@ -38,6 +38,7 @@
     input[type="password"],
     input[type="email"]
       width: 100%
+  +panel(rgba($black, .01))
   +breakpoint($sm-min-screen)
     padding: rhythm(4)
     input[type="submit"]
@@ -45,8 +46,7 @@
   +breakpoint($lg-min-screen)
     input[type="submit"]
       width: auto
-  
-      
+     
     
 [class$="__auth"]
   .panel
@@ -55,3 +55,10 @@
     +breakpoint($lg-min-screen)
       +grid-span(12, 7)
     +links
+
+[class$="__search"]
+  +breakpoint($lg-min-screen)
+    [class$="__kickers"]
+      +grid-span(12, 1)
+    [class$="__punters"]
+      +grid-span(12, 13)

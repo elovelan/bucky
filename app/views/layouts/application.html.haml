@@ -8,7 +8,7 @@
     = javascript_include_tag :modernizr
   %body
     .layout--header
-      .container
+      .header--container
         .logo
           .svg
             %a(href="/")
@@ -28,7 +28,7 @@
           = message
     = yield
     .layout--footer
-      .container
+      .footer--container
         .copyright
           &copy;#{Time.now.year}. #{app_name}. All rights reserved.
         %nav.nav--footer

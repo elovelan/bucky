@@ -1,7 +1,7 @@
-.panel
-  background-color: $panel-background-color
-  border: $panel-border-color 1px solid
-  padding: $default-padding
-  [class$="__auth"] &
-    background-color: rgba($black, .02)
-    border: rgba($black, .05) 1px solid
+=panel($color: $panel-background-color)
+  .panel
+    background-color: $color
+    border: darken(adjust-hue($color, -10), 20%) 1px solid
+    padding: $default-padding
+    +clearfix
+  
