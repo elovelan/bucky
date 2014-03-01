@@ -6,7 +6,11 @@ class UserController < Devise::RegistrationsController
   end
 
   def new
-    #TODO: associate new kicker
+    #stole code from RegistrationController#new method - no way to override this that i can see since the two calls in #new
+    #1- build the new 'User' object (resource) and then render it
+    build_resource({})
+    self.resource.email = params[:email]
+    respond_with self.resource
   end
 
   def edit

@@ -7,13 +7,15 @@
       %p.leader &amp; find the football team that's right for you.
       %small Signup for a 30 Day <em>Risk Free Trial</em>. No credit card required.
       
-      %form
+      =form_tag '/users/new' do
         .form-inputs
-          %label{:for => "email"}
-            Email
-          %input{:email => "email", :placeholder => "enter your email for a free trial", :type => "text"}
+          = label_tag :email, 'Email',
+            {:for => "email"}
+          = email_field_tag :email, '',
+            {:email => "email", :placeholder => "enter your email for a free trial", :type => "text"}
         .form-actions
-          %input{:type => "submit", :value => "Register"}
+          =submit_tag 'Submit',
+           {:type => "submit", :value => "Register"}
 
 .layout--content__highlight
   .container
