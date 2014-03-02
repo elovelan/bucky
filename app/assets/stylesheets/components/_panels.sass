@@ -1,0 +1,7 @@
+=panel($color: $panel-background-color)
+  .panel
+    background-color: $color
+    border: darken(adjust-hue($color, -10), 20%) 1px solid
+    padding: $default-padding
+    +clearfix
+  

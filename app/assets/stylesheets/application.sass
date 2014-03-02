@@ -1,8 +1,7 @@
-//*= require font-awesome
-@import "compass", "compass/reset", "singularitygs"
+@import "compass", "compass/reset", "font-awesome","singularitygs"
 // architecture adopted from https://github.com/jonathanpath/SASS-SMACSS
-@import "tools/*.sass"
-@import "fonts/*.sass"
-@import "modules/*.sass"
-@import "base/*.sass"
-@import "layout/*.sass" 
+
+@import "base/site-variables", "base/typography", "base/mixins"
+@import "components/btn", "components/notifications", "components/panels", "components/tables", "components/toggle", "components/videos"
+@import "base/base"
+@import "layout/*.sass"

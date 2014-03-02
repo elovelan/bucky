@@ -1,0 +1,30 @@
+.layout--content__search
+  .content--container
+    %h1 Find <em>Kickers</em>
+    .search--toggle
+      .toggle__trigger{"data-title" => "Kicker List"}
+        %a.visible 
+          %i.fa.fa-minus-square-o
+          Hide Kicker List
+      .toggle__content
+        .panel 
+          .search-list--short__kickers
+            %h2 Kickers <small>Top 3</small>
+            %table.striped
+              %tbody 
+                - 1.upto(3) do |i|
+                  %tr 
+                    %td=image_tag("https://dl.dropboxusercontent.com/u/39806773/ikickit/mugshots/j.jpg")
+                    %td=link_to raw("Jesus Jones"), "#"
+                    %td Franklington, CA
+                    %td 2014
+          .search-list--short__punters
+            %h2 Punters <small>Top 3</small>
+            %table.striped
+              %tbody 
+                - 1.upto(3) do |i|
+                  %tr 
+                    %td=image_tag("https://dl.dropboxusercontent.com/u/39806773/ikickit/mugshots/j.jpg")
+                    %td=link_to "Jesus Jones", "#"
+                    %td Franklington, CA
+                    %td 2014

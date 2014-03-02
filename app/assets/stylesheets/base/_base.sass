@@ -1,38 +1,41 @@
+// Project uses Compass Reset
 *, *::before, *::after
   +box-sizing(border-box)
 
-.container
+[class$="container"]
   //+background-grid
   +clearfix
   max-width: 1000px
   margin: 0 auto
+//----------------------------------------------------------------------
+// Block Elements
+//----------------------------------------------------------------------
 html
   background-color: $black
+  &.svg
+    .no-svg
+      display: none
+  &.no-svg
+    .svg
+      display: none
 body, html
   height: 100%
   margin: 0
   padding: 0
-
-
+//----------------------------------------------------------------------
+// Tables
+//----------------------------------------------------------------------
 table
   border-collapse: collapse
   width: 100%
   text-align: left
-  border: rgba($primary-color, .03) 1px solid
-  td, th
-    border-bottom:  rgba($primary-color, .03) 1px solid
-  thead
-    tr
-      background-color: rgba($primary-color, .3)
-    th
-      padding: $default-padding $default-padding / 2
+  +margin-trailer(4)
   tbody
     td
       padding: $default-padding / 2
-    tr:nth-child(2n)
-      td
-        background-color: rgba($primary-color, .01)
-
+//----------------------------------------------------------------------
+// Forms
+//----------------------------------------------------------------------
 form
   label
     +font("light")
@@ -64,16 +67,14 @@ form
       +font("thin")
       padding: 0 rhythm(2)
       &:focus
-        background-color: lighten($default-form-input-color, 50%)
-      
+        background-color: lighten($default-form-input-color, 50%)  
     &[type="submit"]
       +btn
-  
+      +margin-trailer(4)
   textarea
     background: none
     +border-radius(0)
     background-color: $default-form-input-color
-    
   // Placeholder stylings
   ::-webkit-input-placeholder
     text-align: center
@@ -83,4 +84,13 @@ form
     text-align: center 
   :-ms-input-placeholder  
     text-align: center
-    
+//----------------------------------------------------------------------
+// Images
+//----------------------------------------------------------------------
+%svg-fill
+  fill: $white
+%img-cirlce
+  +border-radius(100%)
+//----------------------------------------------------------------------
+// Typography -- See base/_typography.sass
+//----------------------------------------------------------------------

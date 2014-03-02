@@ -2,38 +2,43 @@
 %html
   %head
     %title Kicking Bucky Balls
+    %meta(name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=0")
     = csrf_meta_tags
     = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag :modernizr
   %body
     .layout--header
-      .container
+      .header--container
         .logo
-          =link_to image_tag('logos/logo-white-small.png'), root_path
+          .svg
+            %a(href="/")
+              = inline_svg("logo")
+          .no-svg
+            =link_to image_tag('logos/logo-white-small.png'), root_path
         - if user_signed_in?
           .login
             %a=link_to "Add Kick", "#", class: "btn--auth"
             %a=link_to "Add Highlight", "#", class: "btn--auth"
             %a=link_to "My Profile", "#", class: "btn--auth"
         - else
-          .login=link_to 'Login', login_path, class: "btn--auth"
+          .login=link_to 'Login', new_user_session_path, class: "btn--auth"
     - flash.each do |type, message|
       %div{class: "notification #{flash_class type}", "data-alert" => ""}
         .container
           = message
     = yield
     .layout--footer
-      .container
+      .footer--container
         .copyright
-          &copy;#{Time.now.year}. ikick.it. All rights reserved.
+          &copy;#{Time.now.year}. #{app_name}. All rights reserved.
         %nav.nav--footer
           %ul 
             %li=link_to 'About Us', static_path(:about)   
             %li=link_to 'Terms', static_path(:terms)
             %li=link_to 'Pricing Options', static_path(:pricing)
             - if user_signed_in?
-              %li=link_to 'Logout', logout_path
+              %li=link_to 'Log out', destroy_user_session_path, :method => 'delete'
             -else
-              %li=link_to 'Login', login_path
-              %li=link_to 'Register', register_path
+              %li=link_to 'Login', new_user_session_path
+              %li=link_to 'Register', new_user_registration_path
     = javascript_include_tag "application", "data-turbolinks-track" => true
