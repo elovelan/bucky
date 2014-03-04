@@ -11,7 +11,7 @@
   
   .logo
     a:hover
-      +opacity(.5)
+      +opacity(.8)
     .logo--svg
       @extend %svg-fill
     +breakpoint($sm-min-screen)
@@ -19,10 +19,11 @@
       text-align: center
     +breakpoint($lg-min-screen)
       +grid-span(3,1)
+      +padding-leader(1)
       text-align: left
 
   [class^="login"]
-    +margin-leader(4)
+    +margin-leader(5)
     +links($white)
     height: auto
     ul

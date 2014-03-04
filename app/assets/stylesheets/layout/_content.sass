@@ -1,3 +1,6 @@
+[class*="--content__"]
+  border-bottom: rhythm(2) $primary-color solid
+
 [class$="__highlight"]
   +breakpoint($sm-min-screen)
     height: rhythm(16)
@@ -24,6 +27,9 @@
 [class$="__static"], [class$="__auth"], [class$="__search"]
   background-color: $white
   padding: $default-padding * 3 0
+  [class$="container"]
+    +clearfix
+    padding: rhythm(8) 0
   #{headings()}
     +margin-trailer(2)
   p, li
@@ -38,7 +44,7 @@
     input[type="password"],
     input[type="email"]
       width: 100%
-  +panel(rgba($black, .01))
+  +panel(rgba($black, .02))
   +breakpoint($sm-min-screen)
     padding: rhythm(4)
     input[type="submit"]

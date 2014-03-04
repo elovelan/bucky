@@ -10,10 +10,14 @@ $(".toggle__trigger").on("click", "a", function(){
   if ($trigger === "hidden") {
     $this.empty();
     $this.append('<i class="fa fa-minus-square-o"></i> Hide ' + $title);
+    // $content.removeClass("hidden");
+    // $content.addClass("visible");
   }
     else{
       $this.empty();
       $this.append('<i class="fa fa-plus-square-o"></i> Show ' + $title);
+      // $content.removeClass("visible");
+      // $content.addClass("hidden");
   };
   $content.toggle("slow");
 });

@@ -21,7 +21,9 @@
             %a=link_to "Add Highlight", "#", class: "btn--auth"
             %a=link_to "My Profile", "#", class: "btn--auth"
         - else
-          .login=link_to 'Login', new_user_session_path, class: "btn--auth"
+          .login
+            %a=link_to 'Login', new_user_session_path, class: "btn--auth"
+            %a=link_to 'Free Trial', static_path(:pricing), class: "btn--auth"
     - flash.each do |type, message|
       %div{class: "notification #{flash_class type}", "data-alert" => ""}
         .container
