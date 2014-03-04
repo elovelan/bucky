@@ -1,5 +1,7 @@
 Bucky::Application.routes.draw do
   
+  resources :kickers
+
   get "home/Index"
   root 'home#Index'
 

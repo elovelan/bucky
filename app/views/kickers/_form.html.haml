@@ -1,0 +1,59 @@
+.form
+  = simple_form_for @kicker do |f|
+    - if @kicker.errors.any?
+      #error_explanation
+        %h2= "#{pluralize(@kicker.errors.count, "error")} prohibited this kicker from being saved:"
+        %ul
+          - @kicker.errors.full_messages.each do |msg|
+            %li= msg
+    
+    .form-inputs
+      = f.input :contact_email
+    
+    .form-inputs
+      = f.input :contact_phone
+    
+    .form-inputs
+      = f.input :dob
+    
+    .form-inputs
+      = f.input :graduation_year
+    
+    .form-inputs
+      = f.input :mug_shot_url
+    
+    .form-inputs
+      = f.input :bio
+    
+    .form-inputs
+      = f.input :gpa
+    
+    .form-inputs
+      = f.input :sat_score
+    
+    .form-inputs
+      = f.input :act_score
+    
+    .form-inputs
+      = f.input :college_credit_count
+    
+    .form-inputs
+      = f.input :height_inches
+    
+    .form-inputs
+      = f.input :weight_pounds
+    
+    .form-inputs
+      = f.input :forty_yd_dash
+    
+    .form-inputs
+      = f.input :bench_press
+    
+    .form-inputs
+      = f.input :vertical_jump
+    
+    .form-inputs
+      = f.input :leg_press
+    
+    .form-actions
+      = f.submit 'Save'
