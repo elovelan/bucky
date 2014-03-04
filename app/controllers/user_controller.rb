@@ -13,13 +13,25 @@ class UserController < Devise::RegistrationsController
     respond_with self.resource
   end
 
-  def edit
-    puts 'Custom edit logic on render here'
-    super
+  def create
+    super do |u|
+      kicker = Kicker.create(:contact_email => resource.email)
+      u.kicker_id = kicker.id
+      u.save()
+    end
   end
 
-  def update
-    puts 'Custom edit logic on PUT here'
-    super
+  protected
+
+  #Next 2 methods override the redirect after "create"ing a new user
+  #"inactive" variant handles models that are created but not authenticatable (e.g. not confirmed)
+  #we shouldn't be allowing these so once confirmation is in place, remove the inactive variant
+  def after_inactive_sign_up_path_for(resource)
+    puts 'redirecting after sign_up'
+    "/kickers/#{resource.kicker_id}"
+  end
+
+  def after_sign_up_path_for(resource)
+    after_inactive_sign_up_path_for(resource)
   end
 end

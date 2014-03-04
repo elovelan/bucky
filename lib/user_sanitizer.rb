@@ -1,3 +1,5 @@
+puts 'Loading Devise parameter sanitizer'
+
 class User::ParameterSanitizer < Devise::ParameterSanitizer
   private
 
@@ -8,5 +10,9 @@ class User::ParameterSanitizer < Devise::ParameterSanitizer
     #define our custom strong parameters by monkey patching Devise's account_update method which controls
     #which fields/props are mass assigned in the RegistrationController during /users/edit PUT
     default_params.permit(:first_name, :last_name, :email, :password, :password_confirmation, :current_password)
+  end
+
+  def sign_up
+    default_params.permit(:first_name, :last_name, :email, :password, :password_confirmation)
   end
 end
