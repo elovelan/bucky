@@ -1,0 +1,52 @@
+[class*="--group"]
+  border-bottom: rgba($black, .1) 1px solid
+  +margin-trailer(4)
+
+[class*="__plan"]
+  text-align: center
+  color: $white
+  [class$="title"]
+    background-color: $black
+    padding: rhythm(1) 0 
+    +font("ultra light")
+  [class$="cost"]
+    background-color: $primary-color
+    padding: rhythm(4) 0
+    [class$="featured"] &
+      background-color: complement($primary-color)
+    [class$="tenure"]
+      +font("thin")
+    [class$="total"]
+      +font    
+[class$="__features"]
+  list-style: none
+  padding: 0
+  margin: 0 
+  text-align: center
+  li
+    padding: rhythm(1) 0
+    background-color: rgba($black, .05)
+    border-bottom: rgba($black, .1) 1px solid
+[class$="__purchase"]
+  a
+    +btn
+  padding: rhythm(2)
+  text-align: center
+  background-color: rgba($black, .1)
+  
++breakpoint($sm-min-screen)
+  [class*="cost"]
+    [class$="total"]
+      +adjust-font-size-to(30px)
+  [class$="__purchase"]
+    a
+      display: block
++breakpoint($lg-min-screen)
+  [class^="price--group"]
+    &:first-child
+      +grid-span(8,1)
+    &:nth-child(2)
+      +grid-span(8,17)
+    &:last-child
+      +grid-span(8,9)
+      +transform(scale(1.1))
