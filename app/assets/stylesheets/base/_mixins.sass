@@ -5,6 +5,7 @@
     color: $text-color
 =links($link-color: $standard-link)
   a
+    +transition(background-color .5s)
     color: $link-color
     &:hover, &:active
       text-decoration: none
