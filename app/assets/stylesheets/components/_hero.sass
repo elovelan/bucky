@@ -1,0 +1,27 @@
+%hero
+  width: 100%
+  background: $black image-url("textures/dark-striped.jpg")
+  +box-shadow(inset 0 0 rhythm(96) $black)
+  position: relative
+  +psuedo-border 
+  [class$="headshot"], [class$="action-items"]
+    // Fixes Chrome opacity bug
+    +backface-visibility(hidden)
+  [class$="action-items"]
+    h2
+      color: $white
+      +adjust-font-size-to(60px)
+    p
+      color: $white
+    
+    small
+      color: rgba($white, .5)
+      em
+        color: $white
+    
+    form
+      input:focus
+        +box-shadow(0 0 20px complement($primary-color))
+      label
+        +visuallyhidden
+      

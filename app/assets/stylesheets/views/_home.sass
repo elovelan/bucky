@@ -1,0 +1,42 @@
+[class$="--hero"]
+  @extend %hero
+  +breakpoint($sm-min-screen)
+    height: 486px
+    [class$="headshot"]
+      display: none
+    [class$="action-items"]
+      +grid-span(4, 1)
+      padding: rhythm(4)
+      small
+        margin: 0
+      small, [class^="form"], input
+        +margin-trailer(4)
+        +grid-span(4,1,4)
+      input
+        +margin-trailer(2)
+  
+  +breakpoint($lg-min-screen)
+    [class$="headshot"]
+      +grid-span(9, 2)
+      +margin-leader(16)
+      display: block
+    [class$="action-items"]
+      +grid-span(14, 11)
+      +margin-leader(36)
+      small
+        +grid-span(14, 1, 14)
+        display: block
+      form
+        +margin-leader(16)
+        .form-inputs
+          +grid-span(9, 1, 14)
+          input
+            +grid-span(9,1,9)
+        .form-actions
+          +grid-span(4,10,14)
+          input
+            +grid-span(4,1,4)
+[class$="__highlight"]
+  @extend %highlight-content
+       
+      
