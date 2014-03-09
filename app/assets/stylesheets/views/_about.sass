@@ -1,2 +1,35 @@
 [class$="__about"]
   @extend %normal-content
+  +breakpoint($sm-min-screen)
+    p.leader
+      +adjust-font-size-to(24px, 8)
+    h3
+      +margin-leader(4)
+    [class^="team"]
+      +clearfix
+      [class^="panel"]
+        +margin-trailer(4)
+        img
+          +float(left)
+          +border-radius(100%)
+          width: rhythm(16)
+          margin-right: rhythm(4) 
+        h4
+          +adjust-font-size-to(20px, 1)
+          +margin-leader(4)
+        p
+          +adjust-font-size-to(14px)
+      
+  +breakpoint($lg-min-screen)
+    p.leader
+      +adjust-font-size-to(30px, 2)
+    [class^="team"]
+      [class^="panel"]
+        +float-span(8)
+        &:nth-child(3n)
+          +float-span(8, 'last')
+        img
+          width: rhythm(24)
+        h4
+          +adjust-font-size-to(24px, 1)
+      
