@@ -1,8 +1,6 @@
 [class$="__about"]
   @extend %normal-content
   +breakpoint($sm-min-screen)
-    p.leader
-      +adjust-font-size-to(24px, 8)
     h3
       +margin-leader(4)
     [class^="team"]
@@ -21,8 +19,6 @@
           +adjust-font-size-to(14px)
       
   +breakpoint($lg-min-screen)
-    p.leader
-      +adjust-font-size-to(30px, 2)
     [class^="team"]
       [class^="panel"]
         +float-span(8)
