@@ -16,14 +16,14 @@
           .no-svg
             =link_to image_tag('logos/logo-white-small.png'), root_path
         - if user_signed_in?
-          .login
-            %a=link_to "Add Kick", "#", class: "btn--auth"
-            %a=link_to "Add Highlight", "#", class: "btn--auth"
-            %a=link_to "My Profile", "#", class: "btn--auth"
+          %ul.login
+            %li=link_to raw('<i class="fa fa-plus-square-o"></i> Stat'), "#", class: "btn--auth"
+            %li=link_to raw('<i class="fa fa-plus-square-o"></i> Video'), "#", class: "btn--auth"
+            %li=link_to raw('<i class="fa fa-cog"></i> Profile'), "#", class: "btn--auth"
         - else
-          .login
-            %a=link_to 'Login', new_user_session_path, class: "btn--auth"
-            %a=link_to 'Free Trial', static_path(:pricing), class: "btn--auth"
+          %ul.login
+            %li=link_to 'Login', new_user_session_path, class: "btn--auth"
+            %li=link_to 'Free Trial', static_path(:pricing), class: "btn--auth"
     - flash.each do |type, message|
       %div{class: "notification #{flash_class type}", "data-alert" => ""}
         .container

@@ -2,13 +2,11 @@
   background-color: $black
   +clearfix
   +breakpoint($sm-min-screen)
-    padding: rhythm(4)
+    padding-top: rhythm(4)
   +breakpoint($lg-min-screen)
     padding: 0
-  
   [class$="container"]
     height: rhythm(16)
-  
   .logo
     a:hover
       +opacity(.8)
@@ -22,36 +20,50 @@
       +grid-span(3,1)
       +padding-leader(1)
       text-align: left
-
   [class^="login"]
-    +margin-leader(5)
     +links($white)
     height: auto
-    ul
-      display: none
-      
-    
     +breakpoint($sm-min-screen)
       +grid-span(4,1)
-      text-align: left
-
+      border-top: rgba($white, .3) rhythm(.5) solid
+      border-bottom: $primary-color rhythm(1) solid 
+      +display-box
+      +box-orient(horizontal) 
+      [class^="btn"]
+        +btn(rgba($white, .2))
+        +font("thin")
+        padding: 0
+      width: 100%
+      text-align: center
+      margin-left: 0
+      margin-top: rhythm(20)
+      margin-bottom: 0 
+      padding-left: 0
+      li
+        width: 0
+        list-style: none
+        text-align: center
+        +box-flex(1)
+        border-right: rgba($white, .1) 1px solid
+        &:last-child
+          border-right: none 
+      a
+        display: block
+        width: 100%
     +breakpoint($lg-min-screen)
+      margin-top: rhythm(5)
+      border: none
       +grid-span(11, 14)
+      +inline-block
+      li
+        border: none
+        +float(right)
+        width: rhythm(32)
+        margin-left: rhythm(4)
       [class^="btn"]
         +btn(rgba($white, .3))
-        display: block
         width: rhythm(32)
-        +float(right)
-        margin-left: rhythm(4)
-      ul
-        display: block
-        color: $white
-        text-align: right
-        margin-top: rhythm(3)
-        +horizontal-list(right, 0)
-        li
-          margin-left: rhythm(8)
-          +adjust-font-size-to(14px)
+
     
     
     
