@@ -1,12 +1,13 @@
 [class$="--hero"]
   @extend %hero
   +breakpoint($sm-min-screen)
-    height: 486px
     [class$="headshot"]
       display: none
     [class$="action-items"]
       +grid-span(4, 1)
       padding: rhythm(4)
+      h2
+        +adjust-font-size-to(48px)
       small
         margin: 0
       small, [class^="form"], input
@@ -16,6 +17,7 @@
         +margin-trailer(2)
   
   +breakpoint($lg-min-screen)
+    height: 486px
     [class$="headshot"]
       +grid-span(9, 2)
       +margin-leader(16)
@@ -23,6 +25,8 @@
     [class$="action-items"]
       +grid-span(14, 11)
       +margin-leader(36)
+      h2
+        +adjust-font-size-to(60px)
       small
         +grid-span(14, 1, 14)
         display: block
