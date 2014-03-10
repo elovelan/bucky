@@ -1,24 +1,26 @@
 .layout--content__find-kicker
   .content--container
-    %h1 Find <em>Kickers</em>
-    .panel 
-      .search-list--short__kickers
-        %h2 Kickers <small>Top 3</small>
-        %table.striped
-          %tbody 
-            - 1.upto(3) do |i|
-              %tr 
-                %td=image_tag("https://dl.dropboxusercontent.com/u/39806773/ikickit/mugshots/j.jpg")
-                %td=link_to raw("Jesus Jones"), "#"
-                %td Franklington, CA
-                %td 2014
-      .search-list--short__punters
-        %h2 Punters <small>Top 3</small>
-        %table.striped
-          %tbody 
-            - 1.upto(3) do |i|
-              %tr 
-                %td=image_tag("https://dl.dropboxusercontent.com/u/39806773/ikickit/mugshots/j.jpg")
-                %td=link_to "Jesus Jones", "#"
-                %td Franklington, CA
-                %td 2014
+    %h1 Kickers &amp; Punters <em>for 2014</em>
+    %h2 Top 4 <em>Kickers</em>
+    .find-kicker--headshot__kicker
+      - 1.upto(4) do |i|
+        .panel
+          =image_tag("https://dl.dropboxusercontent.com/u/39806773/ikickit/mugshots/j.jpg")
+          %h3 Joe <em>Smith</em>
+          .kicker--rating
+            Rating: 
+            - 1.upto(3) do |s|
+              %i.fa.fa-star
+          =link_to "View Bio", "#"
+    %h2 Top 4 <em>Punters</em>
+    .find-kicker--headshot__punter
+      - 1.upto(4) do |i|
+        .panel
+          =image_tag("https://dl.dropboxusercontent.com/u/39806773/ikickit/mugshots/j.jpg")
+          %h3 Chase <em>Briley</em>
+          .punter--rating
+            Rating: 
+            - 1.upto(3) do |s|
+              %i.fa.fa-star
+          =link_to "View Bio", "#"
+      
