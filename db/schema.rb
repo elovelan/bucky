@@ -11,7 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140220034022) do
+ActiveRecord::Schema.define(version: 20140304023048) do
+
+  create_table "kickers", force: true do |t|
+    t.string   "contact_email"
+    t.string   "contact_phone"
+    t.date     "dob"
+    t.string   "graduation_year"
+    t.string   "mug_shot_url"
+    t.text     "bio"
+    t.decimal  "gpa"
+    t.integer  "sat_score"
+    t.integer  "act_score"
+    t.integer  "college_credit_count"
+    t.decimal  "height_inches"
+    t.integer  "weight_pounds"
+    t.decimal  "forty_yd_dash"
+    t.integer  "bench_press"
+    t.decimal  "vertical_jump"
+    t.integer  "leg_press"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -26,6 +47,9 @@ ActiveRecord::Schema.define(version: 20140220034022) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.integer  "kicker_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

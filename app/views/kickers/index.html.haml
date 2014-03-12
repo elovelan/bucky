@@ -1,0 +1,83 @@
+%h1 Listing kickers
+
+%table
+  %tr
+
+    %th Contact email
+
+    %th Contact phone
+
+    %th Dob
+
+    %th Graduation year
+
+    %th Mug shot url
+
+    %th Bio
+
+    %th Gpa
+
+    %th Sat score
+
+    %th Act score
+
+    %th College credit count
+
+    %th Height inches
+
+    %th Weight pounds
+
+    %th Forty yd dash
+
+    %th Bench press
+
+    %th Vertical jump
+
+    %th Leg press
+
+    %th
+    %th
+    %th
+
+  - @kickers.each do |kicker|
+    %tr
+
+      %td= kicker.contact_email
+
+      %td= kicker.contact_phone
+
+      %td= kicker.dob
+
+      %td= kicker.graduation_year
+
+      %td= kicker.mug_shot_url
+
+      %td= kicker.bio
+
+      %td= kicker.gpa
+
+      %td= kicker.sat_score
+
+      %td= kicker.act_score
+
+      %td= kicker.college_credit_count
+
+      %td= kicker.height_inches
+
+      %td= kicker.weight_pounds
+
+      %td= kicker.forty_yd_dash
+
+      %td= kicker.bench_press
+
+      %td= kicker.vertical_jump
+
+      %td= kicker.leg_press
+
+      %td= link_to 'Show', kicker
+      %td= link_to 'Edit', edit_kicker_path(kicker)
+      %td= link_to 'Destroy', kicker, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Kicker', new_kicker_path
