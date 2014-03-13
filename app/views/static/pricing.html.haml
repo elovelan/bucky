@@ -1,59 +1,45 @@
-.layout--content__static
+.layout--content__pricing
   .container
-    %h1 Pricing <em>Options</em>
-
-    %table.pricing
-      %thead 
-        %tr
-          %th(scope="col")
-          %th(scope="col") Free Plan
-          %th(scope="col") Silver Plan
-          %th(scope="col") Gold Plan
-      %tfoot
-        %tr
-          %th(scope="row") Monthly Cost
-          %td 
-            .price $0.00
-            =link_to "Sign Up", "#", :class => "btn"
-          %td 
-            .price $4.99
-            =link_to "Sign Up", "#", :class => "btn"
-          %td 
-            .price $9.99
-            =link_to "Sign Up", "#", :class => "btn"
-      %tbody 
-        %tr 
-          %th(scope="row") Cool Feature
-          %td
-            %i.fa.fa-check-circle
-          %td
-            %i.fa.fa-check-circle
-          %td
-            %i.fa.fa-check-circle
-        %tr 
-          %th(scope="row") Awesome Feature
-          %td
-            %i.fa.fa-check-circle
-          %td
-            %i.fa.fa-check-circle
-          %td
-            %i.fa.fa-check-circle
-        %tr 
-          %th(scope="row") Majorly Cool Thing
-          %td
-          %td
-            %i.fa.fa-check-circle
-          %td
-            %i.fa.fa-check-circle
-        %tr 
-          %th(scope="row") Marginally OK Item
-          %td
-          %td
-          %td
-            %i.fa.fa-check-circle
-        %tr 
-          %th(scope="row") Thing You Don't Need, But Want 
-          %td
-          %td
-          %td
-            %i.fa.fa-check-circle
+    .pricing
+      .price--group
+        .group__plan
+          .plan--title Free Plan
+          .plan--cost
+            .cost__total $0.00
+            .cost__tenure per month
+        %ul.group__features
+          %li Seasonal Stats
+          %li 1 Highlight Video
+          %li Personal Headshot
+          %li Basic Bio
+          %li Free Forever
+        .group__purchase
+          =link_to "Sign Up", "#", :class => "btn"
+      .price--group
+        .group__plan
+          .plan--title Silver Plan
+          .plan--cost
+            .cost__total $4.99
+            .cost__tenure per month
+        %ul.group__features
+          %li Career Stats
+          %li Unlimited Highlight Vids
+          %li Image Gallery
+          %li Extended Bio
+          %li Free 30 day trial
+        .group__purchase
+          =link_to "Sign Up", "#", :class => "btn"
+      .price--group__featured
+        .group__plan
+          .plan--title Gold Plan
+          .plan--cost
+            .cost__total $9.99
+            .cost__tenure per month / best deal
+        %ul.group__features
+          %li All Silver Plan Items Plus&hellip;
+          %li College Match &amp; Planner
+          %li Kick Quality Scoring
+          %li Peer Analysis
+          %li Free 30 day trial
+        .group__purchase
+          =link_to "Sign Up", "#", :class => "btn"

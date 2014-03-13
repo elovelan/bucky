@@ -26,7 +26,10 @@ $headers: (("1", 36px), ("2", 32px), ("3", 28px), ("4", 24px), ("5", 20px), ("6"
       +adjust-font-size-to(nth($header, 2) * .8, 1, nth($header, 2))
       +font("light")
 p.leader
-  +adjust-font-size-to(30px)
+  +breakpoint($sm-min-screen)
+    +adjust-font-size-to(24px, 8)
+  +breakpoint($lg-min-screen)
+    +adjust-font-size-to(30px, 2)
   +font("thin")
 p, a, li, td, small
   +font("light")

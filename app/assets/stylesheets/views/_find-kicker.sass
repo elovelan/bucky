@@ -1,0 +1,36 @@
+[class$="__find-kicker"]
+  @extend %normal-content
+  +breakpoint($sm-min-screen)
+    [class^="find-kicker"]
+      +grid-span(4,1)
+      +clearfix
+    [class^="panel"]
+      +float-span(2)
+      &:nth-child(2n)
+        +float-span(2, 'last')
+      +margin-trailer(4)
+      text-align: center
+      img
+        +border-radius(100%)
+      h3
+        +adjust-font-size-to(18px,4.5)
+        width: 100%
+        +ellipsis
+      [class$="rating"]
+        +adjust-font-size-to(14px)
+        +font("thin")
+      a
+        +btn
+        +margin-leader(2)
+  +breakpoint($lg-min-screen)
+    h2
+      clear: both
+    [class^="find-kicker"]
+      +grid-span(24,1)
+      +clearfix
+    [class^="panel"]
+      +float-span(6)
+      &:nth-child(2n)
+        +float-span(6)
+      &:nth-child(4n+4)
+        +float-span(6, 'last')

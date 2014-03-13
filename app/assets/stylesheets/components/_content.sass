@@ -1,4 +1,5 @@
-[class$="__highlight"]
+// TODO: these all need to be extracted into a separate view.
+%highlight-content
   +breakpoint($sm-min-screen)
     height: rhythm(16)
     +highlight(lighten($black, 20%))
@@ -20,10 +21,13 @@
       +adjust-font-size-to(24px)
       +adjust-leading-to(16)
     
-
-[class$="__static"], [class$="__auth"], [class$="__search"]
+%normal-content
   background-color: $white
   padding: $default-padding * 3 0
+  border-bottom: rhythm(2) $primary-color solid
+  [class$="container"]
+    +clearfix
+    padding: rhythm(8) 0
   #{headings()}
     +margin-trailer(2)
   p, li
@@ -38,7 +42,7 @@
     input[type="password"],
     input[type="email"]
       width: 100%
-  +panel(rgba($black, .01))
+  +panel(rgba($black, .02))
   +breakpoint($sm-min-screen)
     padding: rhythm(4)
     input[type="submit"]
@@ -46,19 +50,4 @@
   +breakpoint($lg-min-screen)
     input[type="submit"]
       width: auto
-     
-    
-[class$="__auth"]
-  .panel
-    +breakpoint($sm-min-screen)
-      +grid-span(4, 1)
-    +breakpoint($lg-min-screen)
-      +grid-span(12, 7)
-    +links
-
-[class$="__search"]
-  +breakpoint($lg-min-screen)
-    [class$="__kickers"]
-      +grid-span(12, 1)
-    [class$="__punters"]
-      +grid-span(12, 13)
+  
