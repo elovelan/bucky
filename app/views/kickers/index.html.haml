@@ -2,6 +2,7 @@
 
 %table
   %tr
+    %th Full Name
 
     %th Contact email
 
@@ -41,6 +42,7 @@
 
   - @kickers.each do |kicker|
     %tr
+      %td= kicker.users.first().full_name
 
       %td= kicker.contact_email
 
