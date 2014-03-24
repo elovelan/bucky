@@ -26,10 +26,10 @@ class UserController < Devise::RegistrationsController
   #Next 2 methods override the redirect after "create"ing a new user
   #"inactive" variant handles models that are created but not authenticatable (e.g. not confirmed)
   #we shouldn't be allowing these so once confirmation is in place, remove the inactive variant
-  def after_inactive_sign_up_path_for(resource)
-    puts 'redirecting after sign_up'
-    "/kickers/#{resource.kicker_id}"
-  end
+  #def after_inactive_sign_up_path_for(resource)
+  #  puts 'redirecting after sign_up'
+  #  "/kickers/#{resource.kicker_id}"
+  #end
 
   def after_sign_up_path_for(resource)
     after_inactive_sign_up_path_for(resource)
