@@ -7,12 +7,14 @@
       %p.leader &amp; find the football team that's right for you.
       %small Signup for a 30 Day <em>Risk Free Trial</em>. No credit card required.
       
-      =form_tag '/users/new' do
+      =form_tag '/users/create', :as => 'User', :method => 'post' do
         .form-inputs
           = label_tag :email, 'Email',
             {:for => "email"}
+          -# since we're not on our user controler, we'll fake it in order to get the email param picked up by params[] and sanatized by user_sanitizer
+          -# there's probably a better way to do this
           = email_field_tag :email, '',
-            {:email => "email", :placeholder => "enter your email for a free trial", :type => "text"}
+            {:email => 'email', :id => 'user_email', :name => 'user[email]', :placeholder => "enter your email for a free trial", :type => "text"}
         .form-actions
           =submit_tag 'Submit',
            {:type => "submit", :value => "Register"}

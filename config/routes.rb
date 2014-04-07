@@ -15,6 +15,7 @@ Bucky::Application.routes.draw do
   }
   devise_scope :user do
     post '/users/new' => 'user#new'
+    post '/users/create' => 'user#create'
   end
 
   # Autmatically create routes to static pages
