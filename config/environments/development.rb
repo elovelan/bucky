@@ -26,4 +26,22 @@ Bucky::Application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
+
+  #make smtp go, more info here http://stackoverflow.com/a/8189785/251983
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.default_options = { :from => 'bilitynim@gmail.com', :reply_to => 'bilitynim@gmail.com'}
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+      #use with local smtp server- can be installed with gem install mailcatcher (see so post above)
+      #:address => "localhost", :port => 1025,
+      :enable_starttls_auto => true,
+      #:tls => true,
+      :address => "smtp.gmail.com",
+      :port => 587,
+      :domain => "smpt.gmail.com",
+      :authentication => :login,
+      :user_name => "bilitynim@gmail.com",
+      :password => "nimbility4"
+  }
+  config.action_mailer.raise_delivery_errors = true
 end
