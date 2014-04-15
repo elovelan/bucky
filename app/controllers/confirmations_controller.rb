@@ -40,6 +40,11 @@ class ConfirmationsController < Devise::ConfirmationsController
     end
   end
 
+  def awaiting
+    @user = User.find_by_email(params[:email])
+    render 'devise/confirmations/sent'
+  end
+
   protected
 
   def with_unconfirmed_confirmable
