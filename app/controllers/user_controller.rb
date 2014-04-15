@@ -5,6 +5,7 @@ class UserController < Devise::RegistrationsController
     super
   end
 
+  #get /users
   def new
     #stole code from RegistrationController#new method - no way to override this that i can see since the two calls in #new
     #1- build the new 'User' object (resource) and then render it
@@ -13,11 +14,16 @@ class UserController < Devise::RegistrationsController
     respond_with self.resource
   end
 
+  #post /users
   def create
+    @user = {}
     super do |u|
       kicker = Kicker.create(:contact_email => resource.email)
       u.kicker_id = kicker.id
       u.save()
+
+      #used in confirmation/sent view
+      @user = u
     end
   end
 
@@ -28,10 +34,10 @@ class UserController < Devise::RegistrationsController
   #we shouldn't be allowing these so once confirmation is in place, remove the inactive variant
   def after_inactive_sign_up_path_for(resource)
     puts 'redirecting after sign_up'
-    "/kickers/#{resource.kicker_id}"
+    "/awaiting_confirmation?email=#{@user.email}"
   end
 
-  def after_sign_up_path_for(resource)
-    after_inactive_sign_up_path_for(resource)
-  end
+  #def after_sign_up_path_for(resource)
+  #  after_inactive_sign_up_path_for(resource)
+  #end
 end

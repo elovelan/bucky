@@ -6,9 +6,17 @@ Bucky::Application.routes.draw do
   root 'home#Index'
 
   #Auth
-  devise_for :users, :controllers => {:registrations => 'user' }
+  as :user do
+    patch '/user/confirmation' => 'confirmations#update', :via => :patch, :as => :update_user_confirmation
+  end
+  devise_for :users, :controllers => {
+      :registrations => 'user',
+      :confirmations => 'confirmations'
+  }
   devise_scope :user do
     post '/users/new' => 'user#new'
+    post '/users/create' => 'user#create'
+    get 'awaiting_confirmation' => 'confirmations#awaiting'
   end
 
   # Autmatically create routes to static pages
