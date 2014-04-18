@@ -43,10 +43,8 @@ group :assets do
   gem 'coffee-rails', '~> 4.0.0'
 end
 
-group :development, :test do
-  gem "haml-rails"
-  gem 'html2haml'
-end
+gem "haml-rails"
+gem 'html2haml'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
