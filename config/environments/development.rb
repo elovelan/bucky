@@ -44,4 +44,7 @@ Bucky::Application.configure do
       :password => "nimbility4"
   }
   config.action_mailer.raise_delivery_errors = true
+
+  #don't precompile assets - works around haml error when pushing to heroku for now
+  config.assets.initialize_on_precompile = false
 end
